@@ -26,11 +26,11 @@ jobs:
     - run: npm install -g surge
     - name: Yarn Setup
       run: npm install -g yarn
-    - name: Install create-react-app react-dom react react-scripts
-      run: npm install -g create-react-app react-dom react react-scripts
+    - name: Install react-dom react react-scripts
+      run: npm install -g react-dom react react-scripts
     - name: Add react react-dom to yarn
       run: yarn add react react-dom
     - name: Build application using yarn
       run: yarn build
     - name: Deploy on surge
-      run: surge ./build movie-mui-app-22.surge.sh --token ${{secrets.SURGE_TOKEN}}
+      run: surge ./dist movie-mui-app-22.surge.sh --token ${{secrets.SURGE_TOKEN}}
